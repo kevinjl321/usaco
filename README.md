@@ -1,4 +1,4 @@
-# USACO Solutions (JAVA)
+# USACO Solutions (C++)
 A collection of solutions to problems from past USACO contests as well as other problems
 I have solved for practice/training purposes.
 
