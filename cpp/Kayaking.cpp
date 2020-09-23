@@ -1,29 +1,35 @@
-//Link: https://codeforces.com/contest/863/problem/B
-#include<iostream>
+#include <iostream>
 #include<vector>
 #include<algorithm>
+
 using namespace std;
 
-int main(){
+#define ll long long
+#define ld long double
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
     int n;
     cin >> n;
-    int kayaks = n - 1;
-    vector<int> weights;
-    for(int i = 0; i < 2*n; i++){
-        int w;
-        cin >> w;
-        weights.push_back(w);
+    int a[100];
+    for (int i = 0; i < 2*n; ++i) cin >> a[i];
+    
+    sort(a, a + 2 * n);
+
+    ll ans = 1e12;
+    for (int i = 0; i < 2*n-1; ++i)
+    {
+        for (int j = i+1; j < 2*n; ++j)
+        {
+            vector <int> b(0);
+            ll in = 0;
+            for (int k = 0; k < 2*n; ++k) if (k != i && k != j) b.emplace_back(a[k]);
+            for (int k = 0; k < 2*n-2; k += 2) in += (b[k+1]-b[k]);
+            ans = min(ans, in);
+        }
     }
-
-    sort(weights.begin(), weights.end());
-
-    int ctr = 0;
-    for(int i = 0; i < weights.size() - 3; i++){
-        ctr += abs(weights[i+1] - weights[i]);
-    }
-
-    cout << ctr;
-    return 0;
+    cout << ans << endl;
 }
-
-
