@@ -1,68 +1,55 @@
 #include<iostream>
+#include<map>
 #include<string>
-#include<vector>
-#include<algorithm>
+
 using namespace std;
 
-int findCowByName(vector<string> names, string s){
-    for(int i = 0; i < names.size(); i++){
-        if(names[i] == s){
-            return i;
-        }
-    }
-    return -1;
-}
+map<string, int> m;
 
 int main(){
     freopen("notlast.in", "r", stdin);
     freopen("notlast.out", "w", stdout);
     
-    int N;
-    cin >> N;
-
-    vector<string> names = {"Bessie", "Elsie", "Daisy", "Gertie", "Annabelle", "Maggie", "Henrietta"};
-    int amount[7];
-
-    for(int i = 0; i < N; i++){
-        string s;
-        int n;
-        cin >> s >> n;
-        amount[findCowByName(names, s)] += n;
+    int n;
+    cin >> n;
+    if (n == 1){
+        string x;
+        cin >> x;
+        cout << x;
+        return 0;
     }
 
-    int minimumAmount = 1000000;
-		for(int i = 0; i < 7; i++) {
-			if(amount[i] < minimumAmount) {
-				minimumAmount = amount[i];
-			}
-		}
-		
-	int secondSmallestAmount = 1000000;
-	for(int i = 0; i < 7; i++) {
-		if(amount[i] > minimumAmount && amount[i] < secondSmallestAmount) {
-			secondSmallestAmount = amount[i];
-		}
-	}
-
-    const int NOT_FOUND = -1;
-    const int MORE_THAN_ONE = -2;
-	int indexOfSecondSmallest = NOT_FOUND;
-    for(int i = 0; i < 7; i++){
-        if(amount[i] == secondSmallestAmount) {
-			if(indexOfSecondSmallest == NOT_FOUND) {
-			    indexOfSecondSmallest = i;
-			}
-			else {
-				indexOfSecondSmallest = MORE_THAN_ONE;
-			}
-		}
+    string cowNames[7] = {"Bessie", "Elsie", "Daisy", "Gertie", "Annabelle", "Maggie", "Henrietta"};
+    for (int i = 0; i < n; i++){
+        int y;
+        string x;
+        cin >> x >> y;
+        m[x] += y;
     }
 
-    if(indexOfSecondSmallest >= 0) {
-		cout << names[indexOfSecondSmallest] << endl;
-	}
-	else {
-		cout << "Tie" << endl;
-	}
-    return 0;
+    int lowest = 100000000;
+    int secondLowest = 100000000;
+    int secondLowestIndex;
+    bool tie = false;
+    for (int i = 0; i < 7; i++){
+        if (lowest >= m[cowNames[i]]){
+            lowest = m[cowNames[i]];
+        }
+    }
+    for (int i = 0; i < 7; i++){
+        if (secondLowest > m[cowNames[i]] && m[cowNames[i]] != lowest){
+            secondLowest = m[cowNames[i]];
+            secondLowestIndex = i;
+            tie = false;
+        }
+        else if (secondLowest == m[cowNames[i]]){
+            tie = true;
+        }
+    }
+    if (tie){
+        cout << "Tie" << endl;
+    }
+    else{
+        cout << cowNames[secondLowestIndex] << endl;
+    }
 }
