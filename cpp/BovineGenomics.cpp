@@ -36,10 +36,10 @@ int main(void)
   for (int i=0; i<N; i++) fin >> spotty[i];
   for (int i=0; i<N; i++) fin >> plain[i];
 
-  int answer = 0;
+  int ans = 0;
   for (int j=0; j<M; j++) 
-    if (test_location(j)) answer++;
+    if (test_location(j)) ans++;
 	
-  fout << answer << "\n";
+  fout << ans << "\n";
   return 0;
 }
