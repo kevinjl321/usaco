@@ -11,7 +11,6 @@ class BucketBrigade {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("buckets.in"));
         PrintWriter pw = new PrintWriter(new FileWriter("buckets.out"));
-
         for(int i = 0; i < 10; i++){
             String map = br.readLine();
             for(int j = 0; i < 10; i++){
@@ -29,7 +28,6 @@ class BucketBrigade {
                 }
             }
         }
-
         int barnToRock = Math.abs(barnX - rockX) + Math.abs(barnY - rockY);
         int barnToLake = Math.abs(barnX - lakeX) + Math.abs(barnY - lakeY);
         int rockToLake = Math.abs(rockX - lakeX) + Math.abs(rockY - lakeY);
