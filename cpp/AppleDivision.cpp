@@ -1,32 +1,22 @@
 #include<iostream>
 #include<algorithm>
 using namespace std;
+using ll = long long;
 
-int n;
-int apples[20];
+int n; ll weights[20];
 
-int main(){
-    cin >> n;
-    long long sum = 0;
-
-    for(int i = 0; i < n; i++){
-        cin >> apples[i];
-        sum += apples[i];
-    }   
-
-    long long ans = 0;
-    for(int i = 0; i < 1 << n; i++){
-        long long c_sum = 0;
-        for(int j = 0; j < n; j++){
-            if(i >> j & 1){
-                c_sum += apples[j];
-            }
-        }
-        if(c_sum <= sum / 2){
-            ans = max(ans, c_sum);
-        }
+ll solve(int i, ll s1, ll s2){
+    if(i == n){
+        return abs(s1 - s2);
     }
+    return min(solve(i + 1, s1 + weights[i], s2), 
+                solve(i + 1, s1, s2 + weights[i]));
+}
 
-    cout << sum - (2 * ans) << endl;
-    return 0;
+int main() {
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> weights[i];
+    }
+    cout << solve(0, 0, 0) << "\n";
 }
