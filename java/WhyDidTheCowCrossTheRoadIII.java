@@ -1,3 +1,4 @@
+/*
 import java.io.*;
 import java.util.*;
 
@@ -47,3 +48,4 @@ class WhyDidTheCowCrossTheRoadIII {
 		pw.close();
 	}
 }
+*/
