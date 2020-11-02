@@ -1,7 +1,6 @@
 #include <iostream>
-#include <fstream>
 #include<string>
-#include <cmath>
+#include <math.h>
 using namespace std;
 
 int N, M;
@@ -30,16 +29,17 @@ bool test_location(int j)
 
 int main(void)
 {
-  ifstream fin ("cownomics.in");
-  ofstream fout ("cownomics.out");
-  fin >> N >> M;
-  for (int i=0; i<N; i++) fin >> spotty[i];
-  for (int i=0; i<N; i++) fin >> plain[i];
+  freopen("cownomics.in", "r", stdin);
+  freopen("cownomics.out", "w", stdout);
+
+  cin >> N >> M;
+  for (int i=0; i<N; i++) cin >> spotty[i];
+  for (int i=0; i<N; i++) cin >> plain[i];
 
   int ans = 0;
   for (int j=0; j<M; j++) 
     if (test_location(j)) ans++;
 	
-  fout << ans << "\n";
+  cout << ans << "\n";
   return 0;
 }
