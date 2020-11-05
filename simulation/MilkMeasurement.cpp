@@ -1,4 +1,6 @@
 #include <iostream>
+#include<algorithm>
+#include<string>
 using namespace std;
 
 const int MAX_N = 100;
