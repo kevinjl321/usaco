@@ -10,14 +10,17 @@ using namespace std;
 #define sz(x) (int)(x).size()
 
 int main() {
-    string s; cin >> s;
+    string s; 
+    cin >> s;
+
     vector<string> out;
     sort(all(s));
     do {
         out.pb(s);
     } while(next_permutation(all(s)));
-    cout << sz(out) << "\n";
+    
+    cout << sz(out) << endl;
     for(int i = 0; i < sz(out); i++){
-        cout << out[i] << "\n";
+        cout << out[i] << endl;
     }
 }

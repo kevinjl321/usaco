@@ -18,5 +18,5 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> weights[i];
     }
-    cout << solve(0, 0, 0) << "\n";
+    cout << solve(0, 0, 0) << endl;
 }
