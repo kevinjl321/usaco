@@ -21,4 +21,5 @@ int main() {
         }
     }
 	cout << D + 1 << endl;
+	return 0;
 }
