@@ -22,7 +22,7 @@ int main(){
     int t = -1;
     int req = 0;
     int pos = 0;
-    for(int i = n - 1; i >= 0; i--){
+    for(int i = n - 1; i >= 0; i--) {
         if(t != -1 && cows[i] != -1 && cows[i] != t){
             cout << -1 << endl;
             return 0;
