@@ -29,4 +29,5 @@ int main() {
     }
   }
   cout << best << endl;
+  return 0;
 }
