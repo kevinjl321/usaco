@@ -52,7 +52,7 @@ int main() {
             cin >> s;
             characteristics[i].push_back(s);
             bool found = false;
-            for (int k = 0; k<all_characteristics.size(); k++) {
+            for (int k = 0; k < all_characteristics.size(); k++) {
                 if (all_characteristics[k] == s) {
                     found = true;
                 } 
