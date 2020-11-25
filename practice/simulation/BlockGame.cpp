@@ -9,7 +9,7 @@ int main(){
 
     int n;
     string boards[101][2];
-    int blocks[26]  = {0};
+    int blocks[26] = {0};
 
     cin >> n;
     for(int i = 0; i < n; i++){
