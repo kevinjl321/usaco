@@ -17,7 +17,7 @@ bool better(int a, int b, int session)
 int Nbetter(int a, int b)
 {
   int total = 0;
-  for (int session=0; session< k; session++)
+  for (int session = 0; session < k; session++)
     if (better(a,b,session)) total++;
   return total;
 }
