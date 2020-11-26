@@ -34,8 +34,7 @@ int team_wins(char ch1, char ch2){
     return 0; 
 }
  
-int main(void)
-{
+int main() {
     freopen("tttt.in", "r", stdin);
     freopen("tttt.out", "w", stdout);
   
