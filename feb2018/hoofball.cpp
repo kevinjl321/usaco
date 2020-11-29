@@ -41,11 +41,11 @@ int main(void){
     } 
 
     int ans = 0;
-    for (int i=0; i<N; i++) {
+    for (int i = 0; i < N; i++) {
         if (passto[i] == 0){
             ans++;
         }                                                          
-        if (i < target(i) && target(target(i))==i && passto[i]==1 && passto[target(i)]==1){
+        if (i < target(i) && target(target(i)) ==i && passto[i]==1 && passto[target(i)]==1){
             ans++;
         }                                                                               
     }
