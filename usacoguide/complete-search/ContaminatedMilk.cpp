@@ -57,11 +57,11 @@ int main(){
         cin >> s[i] >> t_s[i];
     }
 
-    int ans = 0; 
+    int ans = 1000000; 
     for(int i = 1; i <= M; i++){
         if(bad(i)){
             int drank = numDrank(i);
-            ans = max(drank, ans);
+            ans = min(drank, ans);
         }
         
     }
