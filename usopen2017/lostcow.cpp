@@ -16,13 +16,13 @@ int main() {
     ll dir = 1;
 
     while(true) {
-        if((dir==1 && x<=y && y<=x+by) || (dir==-1 && x-by<=y && y<=x)) {
-            ans += abs(y-x);
+        if((dir == 1 && x <= y && y <= x+by) || (dir == -1 && x - by <= y && y <= x)) {
+            ans += abs(y - x);
             cout << ans << endl;
             break;
         } 
         else {
-            ans += by*2;
+            ans += by * 2;
             by *= 2;
             dir *= -1;
         }

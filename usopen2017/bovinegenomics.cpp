@@ -31,6 +31,7 @@ int main(){
     freopen("cownomics.out", "w", stdout);
 
     cin >> N >> M;
+    
     for(int i = 0; i < N; i++) cin >> spotty[i];
     for(int i = 0; i < N; i++) cin >> plain[i];
 
