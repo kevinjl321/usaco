@@ -3,6 +3,7 @@
 #include<vector>
 #include<map>
 #include<string>
+#include<cmath>
 using namespace std;
 
 void setIO(string name = "") {
@@ -15,4 +16,6 @@ void setIO(string name = "") {
 
 int main(){
     setIO("");
+    
+    return 0;
 }
