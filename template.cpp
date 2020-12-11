@@ -14,7 +14,7 @@ void setIO(string name = "") {
     }
 }
 
-int main(){
+int main(void){
     setIO("");
     
     return 0;
