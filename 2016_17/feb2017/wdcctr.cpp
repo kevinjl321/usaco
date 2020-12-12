@@ -6,25 +6,20 @@ int main(){
     freopen("crossroad.in", "r", stdin);
     freopen("crossroad.out", "w", stdout);
 
-    map<int, int> m;
     int n;
     cin >> n;
+
+    int seen[11];
 
     int ans = 0;
     for(int i = 0; i < n; i++){
         int k, v;
         cin >> k >> v;
-        if(m.count(k) > 0){
-            if(m[k] != v){
-                ans++;
-            }
-            else{
-                m[k] = v;
-            }
+        
+        if(seen[i] > 0 && seen[i] != v){
+            ans++;
         }
-        else{
-            m[k] = v;
-        }
+        seen[i] = v;
     }
 
     cout << ans << endl;

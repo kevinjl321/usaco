@@ -64,6 +64,7 @@ int main(){
             ans = explode;
         }
     }
+    
     cout << ans << endl;
     return 0;
 }

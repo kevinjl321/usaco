@@ -27,7 +27,7 @@ int numDrank(int type){
         }
     }
     int num = 0;
-    for(int i = 1; i <= D; i++){
+    for(int i = 1; i < D; i++){
         if(yes[i]){
             num++;
         }
@@ -35,9 +35,9 @@ int numDrank(int type){
     return num;
 }
 
-bool bad(int type){
+bool bad(int ta){
     for(int i = 0; i < S; i++){
-        if(!(before(s[i], type, t_s[i]))){
+        if(!before(s[i], ta, t_s[i])){
             return false;
         }
     }
@@ -59,8 +59,9 @@ int main(){
 
     int ans = 1000000; 
     for(int i = 1; i <= M; i++){
+        int drank;
         if(bad(i)){
-            int drank = numDrank(i);
+            drank = numDrank(i);
             ans = min(drank, ans);
         }
         

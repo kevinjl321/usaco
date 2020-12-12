@@ -39,11 +39,9 @@ int main(){
     int num_changes = 0;
     
     for (int d = 1; d <= 100; d++) {
-        if (is_highest(0,d-1) != is_highest(0,d) ||
-            is_highest(1,d-1) != is_highest(1,d) ||
-            is_highest(2,d-1) != is_highest(2,d)){
-                num_changes++;
-            }
+        if (is_highest(0, d-1) != is_highest(0,d) || is_highest(1,d-1) != is_highest(1,d) || is_highest(2,d-1) != is_highest(2,d)){
+            num_changes++;
+        }
     }
     
     cout << num_changes << endl;
