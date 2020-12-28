@@ -1,33 +1,44 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<map>
+#include<string>
+#include<cmath>
 using namespace std;
-using ll = long long;
 
-int main() {
-  freopen("triangles.in", "r", stdin);
-  freopen("triangles.out", "w", stdout);
-  ll n;
-  cin >> n;
-  vector<ll> X(n, 0);
-  vector<ll> Y(n, 0);
-  for(ll i=0; i<n; i++) {
-    cin >> X[i] >> Y[i];
-  }
-
-  ll best = -1;
-  for(ll i=0; i<n; i++) {
-    for(ll j=0; j<n; j++) {
-      for(ll k=0; k<n; k++) {
-        if(Y[i]==Y[j] && X[i]==X[k]) {
-          ll area = (X[j]-X[i]) * (Y[k]-Y[i]);
-          if(area < 0) { area *= -1; }
-          if(area > best) {
-            best = area;
-          }
-        }
-      }
+void setIO(string name = "") {
+    ios_base::sync_with_stdio(0); cin.tie(0); 
+    if((name).size()){
+        freopen((name+".in").c_str(), "r", stdin); 
+        freopen((name+".out").c_str(), "w", stdout);
     }
-  }
-  cout << best << endl;
-  return 0;
+}
+
+int main(void){
+    setIO("triangles");
+
+    int x[101];
+    int y[101];
+    int n;
+    cin >> n;
+    for(int i = 0; i < n; i++){
+    	cin >> x[i] >> y[i];
+    }
+
+	int ans = 0;
+    for(int i = 0; i < n; i++){
+		for(int j = 0; j < n; j++){
+			for(int k = 0; k < n; k++){
+				if(y[i] == y[j] && x[i] == x[k]){
+					int area = abs((x[j] - x[i])*(y[k] - y[i]));
+					if(area > ans){
+						ans = area;
+					}
+				}
+			}
+		}
+    }
+
+	cout << ans << endl;
+    return 0;
 }
