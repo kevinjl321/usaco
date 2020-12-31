@@ -16,6 +16,5 @@ void setIO(string name = "") {
 
 int main(void){
     setIO("");
-    
     return 0;
 }
