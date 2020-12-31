@@ -21,14 +21,14 @@ int main(void){
     cin >> n >> k;
 
     string word;
-    int len, words = 0;
+    int len = 0, words = 0;
     for(int i = 0; i < n; i++){
         cin >> word;
         len += word.size();
         if(len <= k){
             words++;
             if(words != 1){
-                cout << " ";
+                cout << ' ';
             }
             cout << word;
         }
@@ -39,5 +39,6 @@ int main(void){
         }
     }
 
+    cout << endl;
     return 0;
 }
