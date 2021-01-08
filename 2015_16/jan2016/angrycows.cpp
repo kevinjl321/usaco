@@ -1,3 +1,4 @@
+  
 #include <iostream>
 #include <algorithm>
 #include <cmath>
@@ -68,4 +69,3 @@ int main(){
     cout << ans << endl;
     return 0;
 }
-
