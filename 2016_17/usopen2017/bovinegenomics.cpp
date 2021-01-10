@@ -21,7 +21,9 @@ bool test_location(int j){
         if (plain[i][j] == 'T') found_cow[1][3] = true;
     }
     for(int i = 0; i < 4; ++i) {
-        if (found_cow[0][i] && found_cow[1][i]) return false;
+        if (found_cow[0][i] && found_cow[1][i]){
+           return false; 
+        }
     }
     return true;
 }
