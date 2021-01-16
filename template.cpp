@@ -6,7 +6,7 @@
 #include<cmath>
 using namespace std;
 
-//leave setIO empty/comment out function call for newer USACO contestsgu
+//leave setIO empty/comment out function call for newer USACO contests
 void setIO(string name = "") {
     ios_base::sync_with_stdio(0); cin.tie(0); 
     if((name).size()){
