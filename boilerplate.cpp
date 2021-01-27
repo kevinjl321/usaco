@@ -1,3 +1,4 @@
+//2020-21 season and onward
 #include<iostream>
 #include<algorithm>
 #include<vector>
@@ -6,7 +7,20 @@
 #include<cmath>
 using namespace std;
 
-//leave setIO empty/comment out function call for newer USACO contests
+int main(void){
+    return 0;
+}
+
+/* 
+//previous competitions:
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<map>
+#include<string>
+#include<cmath>
+using namespace std;
+
 void setIO(string name = "") {
     ios_base::sync_with_stdio(0); cin.tie(0); 
     if((name).size()){
@@ -19,3 +33,4 @@ int main(void){
     setIO("");
     return 0;
 }
+*/
